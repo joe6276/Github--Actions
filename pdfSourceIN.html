@@ -1,0 +1,464 @@
+<html><head><meta charset="UTF-8"><script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-yaml.min.js"></script><style>
+        .article {
+            position: relative;
+            padding-bottom: 24px;
+        }
+        
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+
+        .center-text {
+            text-align: center;
+        }
+        
+
+        .code-block {
+            overflow: hidden;
+            position: relative;
+            padding: 0;
+            border-radius: 8px;
+            font-variant-ligatures: none;
+            background-color: rgba(25, 25, 28, .05);
+            word-break: break-all;
+        }
+        
+
+        .container {
+            max-width: 100%;
+            overflow: hidden;
+            page-break-inside: avoid;
+            display: block;
+        }
+        
+
+        .detached {
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-bottom: 8px;
+        }
+        
+
+        .emphasis {
+            color: inherit;
+            font-weight: inherit;
+            font-style: italic;
+        }
+        
+
+        .image {
+            max-width: 100%;
+            max-height: 90vh;
+            width: auto;
+        }
+        
+
+        .image-container {
+            max-width: 100vw;
+        }
+        
+
+        .image-size {
+            height: auto;
+        }
+        
+
+        .list {
+            list-style-type: disc;
+            padding-left: 0;
+            margin-left: 15px;
+        }
+        
+
+        .list-item {
+            margin-top: 6px;
+            margin-bottom: 6px;
+            margin-left: 4px;
+        }
+        
+
+        .main-title {
+            padding-bottom: 24px;
+            margin-top: 0;
+            font-size: 40px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+
+        .prism {
+            page-break-inside: avoid;
+        }
+        
+        /* PrismJS 1.29.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+abap+abnf+actionscript+ada+agda+al+antlr4+apacheconf+apex+apl+applescript+aql+arduino+arff+armasm+arturo+asciidoc+aspnet+asm6502+asmatmel+autohotkey+autoit+avisynth+avro-idl+awk+bash+basic+batch+bbcode+bbj+bicep+birb+bison+bnf+bqn+brainfuck+brightscript+bro+bsl+c+csharp+cpp+cfscript+chaiscript+cil+cilkc+cilkcpp+clojure+cmake+cobol+coffeescript+concurnas+csp+cooklang+coq+crystal+css-extras+csv+cue+cypher+d+dart+dataweave+dax+dhall+diff+django+dns-zone-file+docker+dot+ebnf+editorconfig+eiffel+ejs+elixir+elm+etlua+erb+erlang+excel-formula+fsharp+factor+false+firestore-security-rules+flow+fortran+ftl+gml+gap+gcode+gdscript+gedcom+gettext+gherkin+git+glsl+gn+linker-script+go+go-module+gradle+graphql+groovy+haml+handlebars+haskell+haxe+hcl+hlsl+hoon+http+hpkp+hsts+ichigojam+icon+icu-message-format+idris+ignore+inform7+ini+io+j+java+javadoc+javadoclike+javastacktrace+jexl+jolie+jq+jsdoc+js-extras+json+json5+jsonp+jsstacktrace+js-templates+julia+keepalived+keyman+kotlin+kumir+kusto+latex+latte+less+lilypond+liquid+lisp+livescript+llvm+log+lolcode+lua+magma+makefile+markdown+markup-templating+mata+matlab+maxscript+mel+mermaid+metafont+mizar+mongodb+monkey+moonscript+n1ql+n4js+nand2tetris-hdl+naniscript+nasm+neon+nevod+nginx+nim+nix+nsis+objectivec+ocaml+odin+opencl+openqasm+oz+parigp+parser+pascal+pascaligo+psl+pcaxis+peoplecode+perl+php+phpdoc+php-extras+plant-uml+plsql+powerquery+powershell+processing+prolog+promql+properties+protobuf+pug+puppet+pure+purebasic+purescript+python+qsharp+q+qml+qore+r+racket+cshtml+jsx+tsx+reason+regex+rego+renpy+rescript+rest+rip+roboconf+robotframework+ruby+rust+sas+sass+scss+scala+scheme+shell-session+smali+smalltalk+smarty+sml+solidity+solution-file+soy+sparql+splunk-spl+sqf+sql+squirrel+stan+stata+iecst+stylus+supercollider+swift+systemd+t4-templating+t4-cs+t4-vb+tap+tcl+tt2+textile+toml+tremor+turtle+twig+typescript+typoscript+unrealscript+uorazor+uri+v+vala+vbnet+velocity+verilog+vhdl+vim+visual-basic+warpscript+wasm+web-idl+wgsl+wiki+wolfram+wren+xeora+xml-doc+xojo+xquery+yaml+yang+zig&plugins=highlight-keywords */
+code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;white-space:pre-wrap;word-spacing:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:16px;margin:0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+
+        
+
+        :root {
+            width: 95%;
+            max-width: 95vw;
+            padding: 0 0 0 30px;
+        }
+        
+        body {
+            font-family: JetBrains Sans,serif;
+        }
+        
+        a {
+            overflow-wrap: anywhere;
+            width: 100vw;
+        }
+        
+        
+        @font-face {
+            font-family: JetBrains Sans;
+            src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Light.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Light.woff) format("woff");
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: JetBrains Sans;
+            src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Regular.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Regular.woff) format("woff");
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: JetBrains Sans;
+            src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-SemiBold.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-SemiBold.woff) format("woff");
+            font-weight: 600;
+            font-style: normal;
+        }
+        
+        
+        code {
+            display: inline;
+            word-break: break-word;
+            font-size: 15px;
+            line-height: inherit;
+            font-variant-ligatures: none;
+            font-family: JetBrains Sans,monospace;
+            white-space: pre-line;
+            overflow-wrap: break-word;
+        }
+        
+        figcaption {
+            margin-top: 5px;
+        }
+        
+        h2 {
+            padding-top: 16px;
+            padding-bottom: 8px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+        h3 {
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+        h4 {
+            padding-top: 4px;
+            padding-bottom: 8px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+        p {
+            padding: 0;
+            border: 0;
+            line-height: 25px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding-bottom: 8px;
+        }
+        
+        div {
+            display: block;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            page-break-inside: avoid;
+        }
+        
+        th, td {
+            border: 1px solid #c4c4c4;
+            padding: 10px;
+            text-align: left;
+            word-break: break-all;
+        }
+        
+        .entry {
+            display: grid;
+            grid-template-columns: auto max-content;
+            grid-template-areas: "chapter page";
+            align-items: end;
+            gap: 0 .25rem;
+            line-height: 25px;
+        }
+        
+        .toc-link-container{
+            grid-area: chapter;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .toc-link{
+            text-decoration: none;
+            color: black;
+        }
+        
+        .toc-link-container::after {
+            position: absolute;
+            padding-left: .25ch;
+            content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+            ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+            ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+            text-align: right;
+        }
+        
+        .page {
+            grid-area: page;
+            width: 30px;
+            text-align: right;
+        }
+        
+
+        .topic {
+            page-break-before: always;
+        }
+        </style></head><body><div><section class="topic"><div><article class="article"><h1 class="main-title">Table of contents</h1><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-1457692806">GitHub Actions</a></div><div class="page">2</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#716309368">First GitHub Action</a></div><div class="page">4</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-127988283">GitHub Action Example Two</a></div><div class="page">7</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-1660684226">GitHub Events</a></div><div class="page">14</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-1189271558">Job Artifacts</a></div><div class="page">17</div></div></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-1457692806">GitHub Actions</h1><section><h2 id="-1457692806#what-is-github-actions" data-toc="what-is-github-actions#GithubActions.md-what-is-github-actions">What is GitHub Actions</h2><p id="-1457692806#-wwfn2i_6">GitHub Actions is a workflow automation service offered by GitHub, to automate all kinds of repository related processes and actions.</p><section><h3 id="-1457692806#repository" data-toc="repository#GithubActions.md-repository">Repository</h3><p id="-1457692806#-wwfn2i_8">Is a bucket that contains the code.</p></section></section><section><h2 id="-1457692806#use-cases-for-github-actions" data-toc="use-cases-for-github-actions#GithubActions.md-use-cases-for-github-actions">Use Cases for GitHub Actions</h2><section><h3 id="-1457692806#code-deployment-ci-cd" data-toc="code-deployment-ci-cd#GithubActions.md-code-deployment-ci-cd">Code Deployment (CI/CD)</h3><ul class="list" id="-1457692806#-wwfn2i_11" start="1"><li class="list-item" id="-1457692806#-wwfn2i_12"><p>Automate code testing, building &amp; deployment.</p></li><li class="list-item" id="-1457692806#-wwfn2i_13"><p>Combined, they group methods for automating app development and deployment.</p></li><li class="list-item" id="-1457692806#-wwfn2i_14"><p>Code changes are automatically built, tested and merged with existing code (CI)</p></li><li class="list-item" id="-1457692806#-wwfn2i_15"><p>After integration, new app or package versions are published automatically.</p></li></ul></section><section><h3 id="-1457692806#code-repository-management" data-toc="code-repository-management#GithubActions.md-code-repository-management">Code &amp; Repository Management</h3><ul class="list" id="-1457692806#-wwfn2i_16" start="1"><li class="list-item" id="-1457692806#-wwfn2i_17"><p>Automate Code Reviews, issues management</p></li></ul></section></section><section><h2 id="-1457692806#github-actions-key-element" data-toc="github-actions-key-element#GithubActions.md-github-actions-key-element">GitHub Actions Key Element</h2><p id="-1457692806#-wwfn2i_18">There are three main key elements in GitHub:</p><ul class="list" id="-1457692806#-wwfn2i_19" start="1"><li class="list-item" id="-1457692806#-wwfn2i_23"><p>Workflows</p></li><li class="list-item" id="-1457692806#-wwfn2i_24"><p>Jobs</p></li><li class="list-item" id="-1457692806#-wwfn2i_25"><p>Steps</p></li></ul><section><h3 id="-1457692806#workflows" data-toc="workflows#GithubActions.md-workflows">Workflows</h3><ul class="list" id="-1457692806#-wwfn2i_26" start="1"><li class="list-item" id="-1457692806#-wwfn2i_27"><p>Workflows are attached to a GitHub repository</p></li><li class="list-item" id="-1457692806#-wwfn2i_28"><p>They Contain one or more jobs</p></li><li class="list-item" id="-1457692806#-wwfn2i_29"><p>They are triggered upon Events</p></li></ul></section><section><h3 id="-1457692806#jobs" data-toc="jobs#GithubActions.md-jobs">Jobs</h3><ul class="list" id="-1457692806#-wwfn2i_30" start="1"><li class="list-item" id="-1457692806#-wwfn2i_31"><p>Jobs define a runner( execution environment)</p></li><li class="list-item" id="-1457692806#-wwfn2i_32"><p>Contain one or more steps</p></li><li class="list-item" id="-1457692806#-wwfn2i_33"><p>Run in parallel( default ) or sequential.</p></li><li class="list-item" id="-1457692806#-wwfn2i_34"><p>Can be conditional</p></li></ul></section><section><h3 id="-1457692806#steps" data-toc="steps#GithubActions.md-steps">Steps</h3><ul class="list" id="-1457692806#-wwfn2i_35" start="1"><li class="list-item" id="-1457692806#-wwfn2i_36"><p>Execute a shell script or an action.</p></li><li class="list-item" id="-1457692806#-wwfn2i_37"><p>Can use custom or third party actions</p></li><li class="list-item" id="-1457692806#-wwfn2i_38"><p>Steps are executed in order</p></li><li class="list-item" id="-1457692806#-wwfn2i_39"><p>Can be conditional</p></li></ul></section></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="716309368">First GitHub Action</h1><p id="716309368#-49e8zs_3">To create a GitHub Action, Let's first Create a repository. <div class="container"><figure class="image-container"><img class="center image image-size" id="716309368#-49e8zs_10" alt="Create Repository" title="Create Repository" src="C:/Users/JonathanNdambuki/WritersideProjects/GithubActions/Writerside/images/image.png" width="1432" height="890"><figcaption class="center-text">Create Repository</figcaption></figure></div></p><p id="716309368#-49e8zs_4">Then click on the Actions tab&gt; then configure.</p><div class="container"><figure class="image-container"><img class="center image image-size" id="716309368#-49e8zs_5" alt="Action" title="Action" src="C:/Users/JonathanNdambuki/WritersideProjects/GithubActions/Writerside/images/image_1.png" width="1812" height="792"><figcaption class="center-text">Action</figcaption></figure></div><p id="716309368#-49e8zs_6">Now delete the steps on the .yml file and paste the following:</p><div class="detached code-block" id="716309368#-49e8zs_7"><pre><code class="language-yaml">name: First Action
+# Above is the name of the workflow
+on: workflow_dispatch
+# This states the event that will trigger the workflow
+# in this case &quot;workflow_dispatch&quot; means it will be manually triggered.
+jobs:
+  ## Now list the job to be executed 
+  first-job:
+    # Give a name (depend on you)
+    runs-on: ubuntu-latest
+    # This is the virtual machine that will run the workflow
+    steps:
+    # Now the steps that will be taken 
+      - name: First hello World
+        run: echo &quot; Hello World &quot;
+        # Here we give a name, to uniquely identify the step 
+        # Then we use run to run a shell Command
+      - name: Say GoodBye
+        run: echo &quot; GoodBye!&quot;
+        # Another step</code></pre></div><p id="716309368#-49e8zs_8">Now commit the changes.</p><section><h2 id="716309368#run-the-workflow" data-toc="run-the-workflow#GA_First-Action.md-run-the-workflow">Run the workflow</h2><p id="716309368#-49e8zs_11">Under actions &gt; All Workflows You will find the 'First Action' work flow: <div class="container"><figure class="image-container"><img class="center image image-size" id="716309368#-49e8zs_13" alt="First Workflow" title="First Workflow" src="C:/Users/JonathanNdambuki/WritersideProjects/GithubActions/Writerside/images/image_2.png" width="1897" height="702"><figcaption class="center-text">First Workflow</figcaption></figure></div></p><p id="716309368#-49e8zs_12">Click on run workflow. <div class="container"><figure class="image-container"><img class="center image image-size" id="716309368#-49e8zs_14" alt="Run Workflow" title="Run Workflow" src="C:/Users/JonathanNdambuki/WritersideProjects/GithubActions/Writerside/images/image_3.png" width="1864" height="875"><figcaption class="center-text">Run Workflow</figcaption></figure></div></p></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-127988283">GitHub Action Example Two</h1><p id="-127988283#w1vn85_3">Find the project Here: https://github.com/Teach2Give-Dotnet-Training/GA_second_Action This is a simple React App with some test files, the goal will be to write an action that can run the test files.</p><div class="detached code-block" id="-127988283#w1vn85_4"><pre><code class="language-yaml">name: Example two
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the Code from the repository
+        uses: actions/checkout@v4
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Tests
+        run: npm run test</code></pre></div><p id="-127988283#w1vn85_5">We will give it a name. Then run the program whenever we push to the repository.</p><section><h2 id="-127988283#more-on-events" data-toc="more-on-events#GA_Second_Workflow.md-more-on-events">More on Events</h2><p id="-127988283#w1vn85_11"><div class="container"><figure class="image-container"><img class="center image image-size" id="-127988283#w1vn85_12" alt="Events" title="Events" src="C:/Users/JonathanNdambuki/WritersideProjects/GithubActions/Writerside/images/image_4.png" width="1638" height="835"><figcaption class="center-text">Events</figcaption></figure></div> There are so many events that can trigger a workflow. We have repository related events and other events that don't depend on repositories. Events also have variations. To get to know events and variations more you can check at this link (<a href="https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows">https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows</a>)</p></section><section><h2 id="-127988283#action" data-toc="action#GA_Second_Workflow.md-action">Action</h2><ul class="list" id="-127988283#w1vn85_14" start="1"><li class="list-item" id="-127988283#w1vn85_16"><p>A (custom) application that performs a (typically complex) frequently repeated task</p></li><li class="list-item" id="-127988283#w1vn85_17"><p>You can build your own actions, but you can also use official or community actions.</p></li></ul><p id="-127988283#w1vn85_15">An alternative to an action is Command</p></section><section><h2 id="-127988283#command-run" data-toc="command-run#GA_Second_Workflow.md-command-run">Command(&quot;run&quot;)</h2><ul class="list" id="-127988283#w1vn85_18" start="1"><li class="list-item" id="-127988283#w1vn85_36"><p>A (typically simple) shell command that you define.</p></li></ul><div class="detached code-block" id="-127988283#w1vn85_19"><pre><code class="language-yaml">steps:
+  - name: Get the Code from the repository
+    uses: actions/checkout@v4</code></pre></div><p id="-127988283#w1vn85_20">The ubuntu-latest runner by default does not have the code, the above step will make sure that the code is downloaded from the repository to the virtual machine.</p><div class="detached code-block" id="-127988283#w1vn85_21"><pre><code class="language-yaml">- name: Install NodeJS
+  uses: actions/setup-node@v4
+  with:
+     node-version: '20'</code></pre></div><p id="-127988283#w1vn85_22">The above step is optional this is because the runner we are using has Node JS installed already. Here is a List of software installed in it: Link (<a href="https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md">https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md</a>)</p><p id="-127988283#w1vn85_23">In case you want to use a different version of Node JS you can now use this action and give a different variation.</p><div class="detached code-block" id="-127988283#w1vn85_24"><pre><code class="language-yaml">- name: Install Dependencies
+  run: npm ci</code></pre></div><p id="-127988283#w1vn85_25">This step will make sure that the runner installs the right dependencies needed to run the project.</p><div class="detached code-block" id="-127988283#w1vn85_26"><pre><code class="language-yaml">- name: Run Tests
+  run: npm run test</code></pre></div><p id="-127988283#w1vn85_27">Now run the command to run the tests. This is also defined in package.json file.</p><p id="-127988283#w1vn85_28">Now push the changes and check your action (Its triggered by a push event)</p><div class="container"><figure class="image-container"><img class="center image image-size" id="-127988283#w1vn85_29" alt="Success" title="Success" src="C:/Users/JonathanNdambuki/WritersideProjects/GithubActions/Writerside/images/image_5.png" width="1797" height="894"><figcaption class="center-text">Success</figcaption></figure></div><p id="-127988283#w1vn85_30">Now let's cause a Bug im the MainContent.test.jsx by negating the test.</p><div class="detached code-block" id="-127988283#w1vn85_31"><pre><code class="language-javascript">describe('MainContent', () =&gt; {
+  it('should render a button', () =&gt; {
+    render(&lt;MainContent /&gt;);
+
+    expect(screen.getByRole('button')).not.toBeInTheDocument();
+  });</code></pre></div><p id="-127988283#w1vn85_32">Now push the changes and check the Workflow. Now the workflow Fails: <div class="container"><figure class="image-container"><img class="center image image-size" id="-127988283#w1vn85_38" alt="Failure" title="Failure" src="C:/Users/JonathanNdambuki/WritersideProjects/GithubActions/Writerside/images/image_6.png" width="1840" height="907"><figcaption class="center-text">Failure</figcaption></figure></div></p><p id="-127988283#w1vn85_33">Now let's correct the above and add another step then push. The below step will mimic deploying an application</p><div class="detached code-block" id="-127988283#w1vn85_34"><pre><code class="language-yaml">name: Example two 
+on: push
+jobs: 
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get the Code from the repository
+              uses: actions/checkout@v4
+
+            - name: Install NodeJS
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+
+            - name: Install Dependencies
+              run: npm ci
+              
+            - name: Run Tests
+              run: npm run test
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get the Code from the repository
+              uses: actions/checkout@v4
+
+            - name: Install NodeJS
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+
+            - name: Install Dependencies
+              run: npm ci
+              
+            - name: Build Projects
+              run: npm run build
+            
+            - name: Deploy Project
+              run: echo &quot; Deploying Project...&quot;</code></pre></div><p id="-127988283#w1vn85_35">Now both steps are successful, but they run in parallel not sequential. <div class="container"><figure class="image-container"><img class="center image image-size" id="-127988283#w1vn85_39" alt="Steps in Parallel" title="Steps in Parallel" src="C:/Users/JonathanNdambuki/WritersideProjects/GithubActions/Writerside/images/image_7.png" width="1848" height="655"><figcaption class="center-text">Steps in Parallel</figcaption></figure></div></p></section><section><h2 id="-127988283#needs" data-toc="needs#GA_Second_Workflow.md-needs">needs</h2><p id="-127988283#w1vn85_40">To make this sequential, in the deploy code add:</p><div class="detached code-block" id="-127988283#w1vn85_41"><pre><code class="language-yaml">deploy:
+   needs: test</code></pre></div><div class="container"><figure class="image-container"><img class="center image image-size" id="-127988283#w1vn85_42" alt="sequential" title="sequential" src="C:/Users/JonathanNdambuki/WritersideProjects/GithubActions/Writerside/images/image_8.png" width="1920" height="721"><figcaption class="center-text">sequential</figcaption></figure></div></section><section><h2 id="-127988283#multi-events" data-toc="multi-events#GA_Second_Workflow.md-multi-events">Multi-Events</h2><p id="-127988283#w1vn85_43">To trigger workflow based on multiple events</p><div class="detached code-block" id="-127988283#w1vn85_44"><pre><code class="language-yaml">on: [push, workflow_dispatch]</code></pre></div></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-1660684226">GitHub Events</h1><section><h2 id="-1660684226#event-activity-types-and-filters" data-toc="event-activity-types-and-filters#GA_Events.md-event-activity-types-and-filters">Event Activity Types and Filters</h2><p id="-1660684226#z1hq3zm_5">some events have Activity Types, others have filters.</p><section><h3 id="-1660684226#activity-types" data-toc="activity-types#GA_Events.md-activity-types">Activity Types</h3><p id="-1660684226#z1hq3zm_8">More detailed control over when a workflow will be triggered. E.g., pull_request Event Activities include:</p><ul class="list" id="-1660684226#z1hq3zm_9" start="1"><li class="list-item" id="-1660684226#z1hq3zm_14"><p>opened</p></li><li class="list-item" id="-1660684226#z1hq3zm_15"><p>closed</p></li><li class="list-item" id="-1660684226#z1hq3zm_16"><p>edited</p></li></ul><div class="detached code-block" id="-1660684226#z1hq3zm_10"><pre><code class="language-yaml">name: Events Demo 1
+on: 
+  pull_request:
+    types: [opened, closed]
+  workflow_dispatch:
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output event data
+        run: echo &quot;${{ toJSON(github.event) }}&quot;
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Test code
+        run: npm run test
+      - name: Build code
+        run: npm run build
+      - name: Deploy project
+        run: echo &quot;Deploying...&quot;</code></pre></div><div class="detached code-block" id="-1660684226#z1hq3zm_11"><pre><code class="language-yaml">on: 
+  pull_request:
+    types: [opened, closed]
+  workflow_dispatch:</code></pre></div><p id="-1660684226#z1hq3zm_12">This part will make sure that when a pull request is opened or closed, the workflow will be triggered. The workflow can also be triggered manually using the workflow_dispatch( note that you have to add the semicolon at the end)</p><p id="-1660684226#z1hq3zm_13">Most events with variation have defaults in case there is no type specified. E.g., for pull-request, the event's activity type is opened, synchronize, or reopened.</p></section><section><h3 id="-1660684226#filters" data-toc="filters#GA_Events.md-filters">Filters</h3><p id="-1660684226#z1hq3zm_17">More detailed control over when a workflow will be triggered. E.g., push Event filter based on target branch.</p><div class="detached code-block" id="-1660684226#z1hq3zm_18"><pre><code class="language-yaml">push:
+  branches:
+    - master
+  paths-ignore:
+    - &quot;.github/workflows/*&quot;</code></pre></div><p id="-1660684226#z1hq3zm_19">The above actions will filter any push that targets the &ldquo;master&rdquo; branch. Any change made to any .yml file located in the .github&gt;workflows directory.</p></section></section><section><h2 id="-1660684226#cancelling-and-skipping-workflow" data-toc="cancelling-and-skipping-workflow#GA_Events.md-cancelling-and-skipping-workflow">Cancelling and Skipping Workflow</h2><section><h3 id="-1660684226#cancelling" data-toc="cancelling#GA_Events.md-cancelling">Cancelling</h3><ul class="list" id="-1660684226#z1hq3zm_22" start="1"><li class="list-item" id="-1660684226#z1hq3zm_23"><p>Workflows get cancelled automatically when jobs fail</p></li><li class="list-item" id="-1660684226#z1hq3zm_24"><p>You can manually cancel workflows</p></li></ul></section><section><h3 id="-1660684226#skipping-a-workflow" data-toc="skipping-a-workflow#GA_Events.md-skipping-a-workflow">Skipping a Workflow</h3><p id="-1660684226#z1hq3zm_25">You can Skip via [Skip ci] etc. in the commit message. If the command is part of your commit message, the Workflow won't be executed.</p></section></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-1189271558">Job Artifacts</h1><p id="-1189271558#or2tz4_3">Job artifacts are the assets/ output generated by a job. <div class="container"><figure class="image-container"><img class="center image image-size" id="-1189271558#or2tz4_31" alt="Build Job" title="Build Job" src="C:/Users/JonathanNdambuki/WritersideProjects/GithubActions/Writerside/images/image_11.png" width="1437" height="832"><figcaption class="center-text">Build Job</figcaption></figure></div></p><p id="-1189271558#or2tz4_4">Starting Workflow:</p><div class="detached code-block" id="-1189271558#or2tz4_5"><pre><code class="language-yaml">name: Deploy website
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint code
+        run: npm run lint
+      - name: Test code
+        run: npm run test
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Build website
+        run: npm run build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: echo &quot;Deploying...&quot;</code></pre></div><p id="-1189271558#or2tz4_6">The above has three jobs a test, build and deploy. But let's focus on the build job because when the <span class="emphasis" id="-1189271558#or2tz4_32">npm run build</span> command is executed, it produces a dist file which id the file that is uploaded to a web server.</p><p id="-1189271558#or2tz4_7">The problem is when we execute the script as it is right now, when the runner is done, it will shut down, and we will lose the files generated by the job.</p><p id="-1189271558#or2tz4_8">So let's modify this, on the Build steps let's modify the code.</p><div class="detached code-block" id="-1189271558#or2tz4_9"><pre><code class="language-yaml">build:
+  needs: test
+  runs-on: ubuntu-latest
+  steps:
+    - name: Get code
+      uses: actions/checkout@v3
+    - name: Install dependencies
+      run: npm ci
+    - name: Build website
+      run: npm run build
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: dist-files
+        path: dist</code></pre></div><section><h2 id="-1189271558#explanation" data-toc="explanation#GA_Job_Artifacts.md-explanation">Explanation</h2><div class="detached code-block" id="-1189271558#or2tz4_12"><pre><code class="language-yaml">- name: Upload Artifacts
+  uses: actions/upload-artifact@v4</code></pre></div><p id="-1189271558#or2tz4_13">We will give the step a name and specify that we are going to use an existing action which helps us upload the artifacts.</p><div class="detached code-block" id="-1189271558#or2tz4_14"><pre><code class="language-yaml">with:
+    name: dist-files
+    path: dist</code></pre></div><p id="-1189271558#or2tz4_15">we will give it a name, in this case its <span class="emphasis" id="-1189271558#or2tz4_33">dist-files</span>, and we will specify the path the files will be uploaded from <span class="emphasis" id="-1189271558#or2tz4_34">dist</span>.</p><p id="-1189271558#or2tz4_16">and now in your workflow, you should be able to see and download the files: <div class="container"><figure class="image-container"><img class="center image image-size" id="-1189271558#or2tz4_35" alt="Artifacts" title="Artifacts" src="C:/Users/JonathanNdambuki/WritersideProjects/GithubActions/Writerside/images/image_12.png" width="1564" height="729"><figcaption class="center-text">Artifacts</figcaption></figure></div></p><p id="-1189271558#or2tz4_17">But we need to use the files in the deployment job. The files produced by the build process will not persist to the deployment job because they are on different runners even though they use the same runner definition. To get the artifacts, we need to download them in the deployment step. Let's modify the deployment job</p><div class="detached code-block" id="-1189271558#or2tz4_18"><pre><code class="language-yaml">deploy:
+  needs: build
+  runs-on: ubuntu-latest
+  steps:
+    - name: Download build Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: dist-files
+    - name: Output content
+      run: ls    
+    - name: Deploy
+      run: echo &quot;Deploying...&quot;</code></pre></div><p id="-1189271558#or2tz4_19">We will add the download artifact action and specify the names of the files to be downloaded, in this case its <span class="emphasis" id="-1189271558#or2tz4_36">dist-files</span> which is the same name we used in the build step.</p><p id="-1189271558#or2tz4_20">The action here will download and unzip the files: And we can now use the 'ls' step to list the contents.</p><p id="-1189271558#or2tz4_21">Now we can see the output right here: <div class="container"><figure class="image-container"><img class="center image image-size" id="-1189271558#or2tz4_37" alt="Download content" title="Download content" src="C:/Users/JonathanNdambuki/WritersideProjects/GithubActions/Writerside/images/image_13.png" width="1435" height="454"><figcaption class="center-text">Download content</figcaption></figure></div></p></section><section><h2 id="-1189271558#dependencies-caching" data-toc="dependencies-caching#GA_Job_Artifacts.md-dependencies-caching">Dependencies Caching</h2><p id="-1189271558#or2tz4_23"><div class="container"><figure class="image-container"><img class="center image image-size" id="-1189271558#or2tz4_38" alt="Step Time" title="Step Time" src="C:/Users/JonathanNdambuki/WritersideProjects/GithubActions/Writerside/images/image_14.png" width="1518" height="375"><figcaption class="center-text">Step Time</figcaption></figure></div> If we take a look at the build step, we will notice that the step that takes more time is the dependency installation step. Also, we will notice that we have repeated the step in both test and build job.</p><p id="-1189271558#or2tz4_24">We can save some time if we cache the dependencies and reuse then in the build step. <div class="container"><figure class="image-container"><img class="center image image-size" id="-1189271558#or2tz4_39" alt="Cache" title="Cache" src="C:/Users/JonathanNdambuki/WritersideProjects/GithubActions/Writerside/images/image_15.png" width="1641" height="826"><figcaption class="center-text">Cache</figcaption></figure></div></p><p id="-1189271558#or2tz4_25">GitHub Action has an action that will help us cache the dependencies</p><div class="detached code-block" id="-1189271558#or2tz4_26"><pre><code class="language-yaml">- name: Cache Dependencies
+  uses: actions/cache@v4
+  with:
+    path: ~/.npm
+    key: deps-node-modules- ${{hashFiles('**/package-lock.json')}}</code></pre></div><p id="-1189271558#or2tz4_27">This will now cache the dependencies and will only run <span class="emphasis" id="-1189271558#or2tz4_40">npm ci</span> if the package.lock.json file has changed so that means we will be able to use cache for every step provided the package-lock.json file has not changed.</p><p id="-1189271558#or2tz4_28">Now the workflow file will look like:</p><div class="detached code-block" id="-1189271558#or2tz4_29"><pre><code class="language-yaml">jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Cache Dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: deps-node-modules- ${{hashFiles('**/package-lock.json')}}
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint code
+        run: npm run lint
+      - name: Test code
+        run: npm run test
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Cache Dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: deps-node-modules- ${{hashFiles('**/package-lock.json')}}
+      - name: Install dependencies
+        run: npm ci
+      - name: Build website
+        run: npm run build
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-files
+          path: dist</code></pre></div><p id="-1189271558#or2tz4_30">Now you will notice that the Cache is used for the second Job (build). And cache will be used, hence it will be a bit faster. <div class="container"><figure class="image-container"><img class="center image image-size" id="-1189271558#or2tz4_41" alt="Caching" title="Caching" src="C:/Users/JonathanNdambuki/WritersideProjects/GithubActions/Writerside/images/image_16.png" width="1489" height="427"><figcaption class="center-text">Caching</figcaption></figure></div></p></section></article></div></section></div></body></html>

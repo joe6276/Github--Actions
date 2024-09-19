@@ -8,4 +8,9 @@
 
     <toc-element topic="GithubActions.md"/>
     <toc-element topic="GA_First-Action.md"/>
+    <toc-element topic="GA_Second_Workflow.md"/>
+    <toc-element topic="GA_Events.md"/>
+    <toc-element topic="GA_Job_Artifacts.md"/>
+    <toc-element topic="GA_Environment_Variables.md"/>
+    <toc-element topic="GA_Control_ Execution_FLow.md"/>
 </instance-profile>
