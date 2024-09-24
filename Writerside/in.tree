@@ -13,4 +13,5 @@
     <toc-element topic="GA_Job_Artifacts.md"/>
     <toc-element topic="GA_Environment_Variables.md"/>
     <toc-element topic="GA_Control_ Execution_FLow.md"/>
+    <toc-element topic="GA_Custom_Actions.md"/>
 </instance-profile>
